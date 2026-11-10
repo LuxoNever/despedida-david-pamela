@@ -87,7 +87,6 @@ window.INVITATION_CONFIG = {
     gallery: {
       eyebrow: "UN POQUITO DE LO QUE NOS ESPERA",
       title: "Una mesa, mil historias.", titleAccent: "Nuevos recuerdos",
-      description: "Compartiremos una cena especial para agradecer el camino recorrido, celebrar lo vivido y brindar por los nuevos comienzos.",
       captionOne: "01 / Las pequeñas grandes cosas.",
       captionTwo: "02 / Siempre habrá motivos para brindar.",
       quote: "Que la distancia cambie los planes, pero nunca el cariño.",
@@ -95,7 +94,7 @@ window.INVITATION_CONFIG = {
       disclaimer: "Imágenes ambientales para imaginar el encuentro.",
     },
     payment: {
-      title: "Compartiremos una mesa,",
+      title: "Compartiremos una cena,",
       costLabel: "costo por plato",
       note: "El importe puede requerir que lo introduzcas manualmente en tu aplicación bancaria.",
       pending: "El QR de pago estará disponible próximamente.",
