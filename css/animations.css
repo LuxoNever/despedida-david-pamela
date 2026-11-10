@@ -1,0 +1,121 @@
+/* Midnight Soirée: sobre, recuerdos y lectura con ritmos propios. */
+@keyframes arrive { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes title-arrive { from { opacity: 0; transform: translateY(38px); } to { opacity: 1; transform: none; } }
+@keyframes envelope-arrive { from { opacity: 0; transform: translateY(18px) rotate(-3deg); } to { opacity: 1; transform: none; } }
+@keyframes scene-settle { from { opacity: .25; transform: scale(1.045) translateY(-5px); } to { opacity: 1; transform: none; } }
+@keyframes soft-light { from { opacity: .4; } to { opacity: .8; } }
+@keyframes orbit-breathe { from { opacity: .35; transform: scale(.98); } to { opacity: .65; transform: scale(1.02); } }
+@keyframes discover { 0%, 100% { transform: translateY(-3px); } 55% { transform: translateY(6px); } }
+@keyframes seal-release { 0% { opacity: 1; transform: scale(1); } 35% { opacity: 1; transform: scale(1.08); } 100% { opacity: 0; transform: translateY(8px) scale(.9); } }
+@keyframes closing-mark { from { opacity: 0; transform: rotate(-25deg) scale(.7); } to { opacity: 1; transform: none; } }
+@keyframes tick-a { from { opacity: .45; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+@keyframes tick-b { from { opacity: .45; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+
+/* El color y el foco responden incluso con el movimiento reducido. */
+.button-light:active, .button-light:focus-visible { background: var(--primary-fixed-dim); }
+.button-primary:active, .button-primary:focus-visible { background: var(--tertiary); }
+.choice:active { background: var(--secondary-fixed); }
+.motion-toggle:active { background: var(--primary-container); }
+.site-header nav a, .footer-bottom a, .closing-link, .scroll-cue > span { position: relative; }
+.site-header nav a::after, .footer-bottom a::after, .closing-link::after, .scroll-cue > span::after { content: ""; position: absolute; height: 1px; inset: auto 0 0; background: currentColor; transform: scaleX(0); transform-origin: left; }
+.site-header nav a:focus-visible::after, .footer-bottom a:focus-visible::after, .closing-link:focus-visible::after, .scroll-cue:focus-visible > span::after { transform: scaleX(1); }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  .letter-stage { animation: envelope-arrive 650ms var(--ease-arrive) both; }
+  .opening > .button, .cover-footnote { animation: arrive 650ms var(--ease-arrive) both; }
+  .opening > .button { animation-delay: 160ms; }
+  .opening { transition: opacity 440ms ease-out; }
+  .opening.is-revealing { opacity: 0; }
+  .envelope-flap { transition: transform 540ms var(--ease) 160ms; }
+  .wax-seal { transition: transform 90ms var(--ease); }
+  .cover-letter { transition: transform 720ms var(--ease-arrive) 620ms, opacity 240ms ease-out 620ms, visibility 0s linear 620ms; }
+  .cover-letter > * { transition: opacity 350ms ease-out 900ms; }
+  .opening.is-opening .wax-seal { animation: seal-release 280ms var(--ease) both; }
+  .opening.is-opening .envelope-flap { transform: rotateX(175deg); }
+  .opening.is-opening .cover-letter { opacity: 1; visibility: visible; transform: translateY(-88%); }
+  .opening.is-opening .cover-letter > * { opacity: 1; }
+
+  .experience-ready:not(.hero-entered) .hero-entrance { animation: arrive 850ms var(--ease-arrive) 280ms both; }
+  .experience-ready:not(.hero-entered) .hero-line { animation: title-arrive 950ms var(--ease-arrive) 200ms both; }
+  .experience-ready:not(.hero-entered) .hero-line:nth-child(2) { animation-duration: 1150ms; animation-delay: 440ms; }
+  .experience-ready:not(.hero-entered) .scene-entrance { animation: scene-settle 1800ms var(--ease-arrive) both; }
+  .experience-ready:not(.hero-entered) .hero-subtitle { animation-delay: 650ms; }
+  .experience-ready:not(.hero-entered) .hero-info { animation-delay: 800ms; }
+  .experience-ready:not(.hero-entered) .hero-bottom > .button { animation-delay: 920ms; }
+
+  .reveal { transition: opacity 780ms ease-out, transform 850ms var(--ease-arrive); }
+  .reveal-pending:not(.is-visible) { opacity: 0; transform: translateY(30px); }
+  .message-heading.reveal-pending:not(.is-visible), .section-heading.reveal-pending:not(.is-visible), .rsvp-copy.reveal-pending:not(.is-visible) { transform: translateY(20px); }
+  .scripture.reveal { transition-duration: 950ms; }
+  .scripture.reveal-pending:not(.is-visible) { transform: translateY(34px); }
+  .scripture:nth-child(2).reveal { transition-delay: 240ms; }
+  .detail-card.reveal-pending:not(.is-visible) { transform: translateY(36px); }
+  .detail-card:nth-child(2).reveal { transition-delay: 100ms; }
+  .detail-card:nth-child(3).reveal { transition-delay: 200ms; }
+  .countdown-stage.reveal-pending:not(.is-visible) { transform: translateY(22px) scale(.98); }
+  .portrait-memory.reveal-pending:not(.is-visible) { transform: translateY(28px) rotate(-1deg); }
+  .landscape-memory.reveal-pending:not(.is-visible) { transform: translateY(24px) scale(.96); }
+  .rsvp-card.reveal-pending:not(.is-visible) { transform: translateY(26px); }
+  .payment-panel.reveal-pending:not(.is-visible) { transform: translateY(28px); }
+  .table-copy.reveal-pending:not(.is-visible) { transform: translateY(20px); }
+  .site-footer h2.reveal-pending:not(.is-visible) { transform: translateY(44px) scale(.97); }
+  .footer-star.is-visible { animation: closing-mark 1000ms var(--ease-arrive) both; }
+  .site-footer h2.reveal { transition-duration: 1000ms; transition-delay: 100ms; }
+  .closing-message.reveal { transition-delay: 280ms; }
+
+  .hero-halo { animation: soft-light 10s ease-in-out infinite alternate; }
+  .countdown-orbit { animation: orbit-breathe 16s ease-in-out infinite alternate; }
+  .cue-arrow { animation: discover 1800ms ease-in-out infinite; }
+  .ambient-motion:not(.is-in-view), .page-hidden .ambient-motion { animation-play-state: paused; }
+  .countdown-stage.is-visible .countdown-digit { animation: arrive 700ms var(--ease-arrive) both; }
+  .countdown-stage.is-visible .countdown > div:nth-child(2) .countdown-digit { animation-delay: 100ms; }
+  .countdown-stage.is-visible .countdown > div:nth-child(3) .countdown-digit { animation-delay: 200ms; }
+  .countdown-stage.is-visible .countdown > div:nth-child(4) .countdown-digit { animation-delay: 300ms; }
+  .countdown-stage.is-visible .countdown-digit.digit-change-a { animation: tick-a 260ms ease-out; }
+  .countdown-stage.is-visible .countdown-digit.digit-change-b { animation: tick-b 260ms ease-out; }
+  .button, .choice, .motion-toggle, .carousel-arrow, .carousel-dots button > span { transition: transform 150ms var(--ease), background-color 150ms ease, border-color 150ms ease; }
+  .button:active, .choice:active, .motion-toggle:active, .carousel-arrow:active { transform: scale(.965); transition-duration: 90ms; }
+  .button .icon, .closing-link > span:last-child { transition: transform 200ms var(--ease); }
+  .site-header nav a::after, .footer-bottom a::after, .closing-link::after, .scroll-cue > span::after { transition: transform 220ms var(--ease); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .carousel-arrow:hover { background: var(--primary-container); }
+  .carousel-dots button:hover > span { opacity: 1; transform: scale(1.2); }
+  .button-light:hover { background: var(--primary-fixed); }
+  .button-primary:hover { background: var(--primary-container); }
+  .button:not(:disabled):hover { transform: translateY(-2px); }
+  .button:not(:disabled):active { transform: scale(.965); }
+  .button:hover .icon, .closing-link:hover > span:last-child { transform: translate(2px, -2px); }
+  .site-header nav a:hover::after, .footer-bottom a:hover::after, .closing-link:hover::after, .scroll-cue:hover > span::after { transform: scaleX(1); }
+  .photo-frame img:not([data-source="client"]) { transition: transform 600ms var(--ease); }
+  .memory-photo:hover img:not([data-source="client"]) { transform: scale(1.025); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal-pending { opacity: 1 !important; transform: none !important; }
+  .hero-line, .hero-entrance, .scene-entrance { opacity: 1; transform: none; }
+  .button:active, .button:hover, .choice:active, .motion-toggle:active, .photo-frame img { transform: none !important; }
+  .opening.is-revealing { opacity: 0; }
+}
+
+html.reduce-motion, html.motion-paused { scroll-behavior: auto; }
+.reduce-motion *, .motion-paused *, .reduce-motion *::before, .motion-paused *::before, .reduce-motion *::after, .motion-paused *::after { animation: none !important; transition: none !important; }
+.reduce-motion .reveal-pending, .motion-paused .reveal-pending { opacity: 1 !important; transform: none !important; }
+.reduce-motion .hero-line, .motion-paused .hero-line, .reduce-motion .scene-entrance, .motion-paused .scene-entrance, .reduce-motion .hero-entrance, .motion-paused .hero-entrance { opacity: 1; transform: none; }
+.reduce-motion .button, .motion-paused .button, .reduce-motion .choice, .motion-paused .choice, .reduce-motion .motion-toggle, .motion-paused .motion-toggle { transform: none !important; }
+.reduce-motion .opening.is-revealing, .motion-paused .opening.is-revealing { opacity: 0; }
+.no-ambient-motion .ambient-motion { animation: none; }
+
+.opening.is-simple-opening .wax-seal { opacity: 0; }
+.opening.is-simple-opening .envelope-flap { transform: rotateX(175deg); }
+.opening.is-simple-opening .cover-letter { opacity: 1; visibility: visible; transform: translateY(-88%); }
+.opening.is-simple-opening .cover-letter > * { opacity: 1; }
+
+/* Reiniciar la portada siempre oculta el papel y pliega la solapa en el mismo frame. */
+.opening[data-state="closed"] .cover-letter,
+.opening[data-state="closed"] .cover-letter > *,
+.opening[data-state="closed"] .envelope-flap { transition: none; }

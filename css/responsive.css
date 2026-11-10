@@ -1,0 +1,97 @@
+@media (max-width: 599px) {
+  .cover-eyebrow { display: none; }
+  .flower-left { transform: none; }
+  .flower-right { transform: scaleX(-1); }
+}
+@media (min-width: 600px) {
+  .container { width: min(100% - 4rem,76rem); }
+  .wordmark { font-size: 1.3rem; }
+  .site-header nav { gap: 1.5rem; }
+  .site-header .details-nav { display: inline-flex; }
+  .cover-eyebrow, .cover-description { font-size: .75rem; }
+  .cover-letter { padding-top: 1.5rem; }
+  .cover-title { font-size: 3.8rem; }
+  .cover-flower { top: -15%; }
+  .wax-seal { width: 72px; height: 72px; left: calc(50% - 36px); top: calc(66% - 36px); }
+  .carousel-viewport { --slide-width: calc(100vw / 3); height: 26rem; }
+  .memory-carousel { min-height: 32rem; }
+  .hero-main { padding-top: 12rem; }
+  h1 > span, h1 > em { display: inline-block; }
+  .hero-subtitle { font-size: 1rem; }
+  .hero-honorees { margin-top: 1rem; }
+  .hero-honorees p { font-size: 3.8rem; }
+  .carousel-arrow { top: 12rem; }
+  .countdown { gap: 1rem; }
+  .countdown > div { padding: .65rem 1rem; }
+  .countdown-digit { font-size: 2.8rem; }
+  .countdown > div > span:last-child { font-size: .75rem; }
+  .detail-cards { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.5rem; }
+  .detail-value { font-size: 1.4rem; }
+  .choice-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 768px) {
+  .message-body { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 2rem; }
+  .scripture + .scripture { border-left: 1px solid color-mix(in srgb,var(--inverse-primary) 50%,transparent); padding-left: 2rem; }
+  .scripture blockquote { font-size: 1.125rem; }
+  .table-section { padding: 0; }
+  .table-section > .container { position: relative; min-height: 17rem; display: flex; align-items: center; }
+  .table-copy { width: 48%; padding: 2rem 0; }
+  .table-copy p { font-size: .8125rem; }
+  .table-media { position: absolute; width: 61%; right: 0; top: 0; bottom: 0; margin: 0; display: flex; align-items: center; }
+  .table-media::after { background: linear-gradient(90deg,var(--primary-container),transparent 30%); }
+  .payment-panel { grid-template-columns: 1.3fr .8fr; align-items: center; gap: 1.5rem; padding: 2.5rem 2rem 1.2rem; }
+  .payment-copy h2 { font-size: 2rem; }
+  .qr-area { max-width: 20rem; }
+  .rsvp-layout { grid-template-columns: .9fr 1.1fr; gap: 2rem; }
+  .rsvp-card .choice-grid { grid-template-columns: 1fr; }
+}
+@media (min-width: 1024px) {
+  .container { width: min(100% - 7rem,76rem); }
+  .site-header { min-height: 76px; }
+  .site-header nav { gap: 2.5rem; }
+  .carousel-viewport { --slide-width: calc(100vw / 6); height: 24rem; }
+  .memory-carousel { min-height: 29.5rem; }
+  .hero-main { padding-top: 12.5rem; }
+  .hero-honorees p { font-size: 3.9rem; }
+  .hero-subtitle { margin-top: .7rem; }
+  .carousel-arrow { top: 10.5rem; }
+  .carousel-prev { left: 1rem; }.carousel-next { right: 1rem; }
+  .countdown-section { padding: 1.5rem 0 1.25rem; }
+  .countdown-stage h2 { font-size: 2.7rem; }
+  .countdown-stage h2 > span, .countdown-stage h2 > em { display: inline; }
+  .table-section > .container { min-height: 16.5rem; }
+  .table-copy h2 { font-size: 2.6rem; }
+  .table-copy { width: 46%; }
+  .table-media { right: max(0px,calc((100vw - 1400px)/2)); }
+  .message-section { padding: 1.7rem 0 2.4rem; }
+  .message-body { gap: 3rem; }
+  .scripture { grid-template-columns: 48px minmax(0,1fr); gap: 1.5rem; }
+  .book-icon { width: 48px; height: 48px; }
+  .scripture + .scripture { padding-left: 3rem; }
+  .scripture figcaption { font-size: 1.9rem; }
+  .scripture blockquote { font-size: 1.15rem; }
+  .payment-panel { grid-template-columns: 1.7fr 1fr; gap: 2rem; padding: 2.5rem 3rem 1.3rem; }
+  .payment-copy { grid-template-columns: 84px 1fr; gap: 1.75rem; align-items: center; }
+  .plate-icon { width: 84px; height: 84px; }
+  .payment-copy h2 { font-size: 2.6rem; }
+  .payment-flower { width: 180px; height: 300px; left: -85px; bottom: -1.5rem; }
+  .detail-value { font-size: 1.65rem; }
+  .rsvp-layout { gap: 5rem; }
+  .rsvp-card { padding: 2rem; }
+  .rsvp-card .choice-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-height: 700px) {
+  .opening { justify-content: flex-start; padding-top: 6rem; gap: .7rem; }
+  .letter-stage { height: 18rem; width: min(90%,34rem); margin-top: 3rem; }
+  .cover-motto { font-size: 1.5rem; }
+  .cover-footnote { margin-bottom: 1rem; }
+}
+@media (max-width: 389px) {
+  .opening-dedication { font-size: .875rem; }
+  .wordmark { font-size: .875rem; }
+  .site-header nav { gap: .45rem; }
+  .hero-honorees { gap: .5rem; }
+  .hero-honorees p { font-size: 2.4rem; }
+  .name-rule { width: 1.2rem; }
+  .cover-description { letter-spacing: .06em; }
+}
